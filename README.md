@@ -14,7 +14,7 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 * Wardah (S348559) har hatt hovedansvar for oppgave: 3 og 4
 * Sara (364533) har hatt hovedansvar for oppgave: 1 og 2
 * Danial (341501) har hatt hovedansvar for oppgave: 6 og 8
-* Vi har i fellesskap løst oppgave: 9 og 10 - blablabla
+* Vi har i fellesskap løst oppgave: 9 og 10 
 
 # Oppgavebeskrivelse
 
