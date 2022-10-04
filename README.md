@@ -18,13 +18,13 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 
 # Oppgavebeskrivelse
 
-Oppgave 1:
-Oppgave 2:
-Oppgave 3:
-Oppgave 4:
-Oppgave 5:
-Oppgave 6:
-Oppgave 7:
-Oppgave 8:
+Oppgave 1: Sara 
+Oppgave 2: Sara
+Oppgave 3: Wardah 
+Oppgave 4: Wardah
+Oppgave 5: Nasiba 
+Oppgave 6: Danial
+Oppgave 7: Nasiba
+Oppgave 8: Danial
 Oppgave 9:
 Oppgave 10:
