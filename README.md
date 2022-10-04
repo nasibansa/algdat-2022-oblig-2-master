@@ -25,6 +25,6 @@ Oppgave 4: Wardah
 Oppgave 5: Nasiba 
 Oppgave 6: Danial
 Oppgave 7: Nasiba
-Oppgave 8: Danial
+Oppgave 8: Daniiiih
 Oppgave 9:
 Oppgave 10:
