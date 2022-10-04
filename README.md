@@ -26,5 +26,5 @@ Oppgave 5: Nasiba
 Oppgave 6: Danial
 Oppgave 7: Nasiba
 Oppgave 8: Danial
-Oppgave 9:
-Oppgave 10:
+Oppgave 9: FELLES
+Oppgave 10: FELLES
