@@ -21,7 +21,7 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 Oppgave 1: Sara 
 Oppgave 2: Sara
 Oppgave 3: Wardah 
-Oppgave 4: Wardah
+Oppgave 4: Wardahbh
 Oppgave 5: Nasiba 
 Oppgave 6: Danial
 Oppgave 7: Nasiba
