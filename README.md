@@ -19,7 +19,7 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 # Oppgavebeskrivelse
 
 Oppgave 1: Sara 
-Oppgave 2: Sarahvhv
+Oppgave 2: Sarah
 Oppgave 3: Wardah 
 Oppgave 4: Wardahbh
 Oppgave 5: Nasiba 
