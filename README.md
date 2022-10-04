@@ -10,11 +10,11 @@ Oppgaven er levert av følgende studenter:
 # Arbeidsfordeling
 
 I oppgaven har vi hatt følgende arbeidsfordeling:
-* Nasiba (S364515) har hatt hovedansvar for oppgave:
-* Wardah (S348559) har hatt hovedansvar for oppgave:
-* Sara (364533) har hatt hovedansvar for oppgave:
-* Danial (341501) har hatt hovedansvar for oppgave:
-* Vi har i fellesskap løst oppgave:
+* Nasiba (S364515) har hatt hovedansvar for oppgave: 5 og 7
+* Wardah (S348559) har hatt hovedansvar for oppgave: 3 og 4
+* Sara (364533) har hatt hovedansvar for oppgave: 1 og 2
+* Danial (341501) har hatt hovedansvar for oppgave: 6 og 8
+* Vi har i fellesskap løst oppgave: 9 og 10
 
 # Oppgavebeskrivelse
 
