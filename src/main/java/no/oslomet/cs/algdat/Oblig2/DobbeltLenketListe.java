@@ -7,7 +7,7 @@ package no.oslomet.cs.algdat.Oblig2;
 import java.util.Comparator;
 import java.util.Iterator;
 
-
+//Oppgave 1 (Konstruktør DobbeltLenketListe + metode 'int antall' og 'boolean tom'
 public class DobbeltLenketListe<T> implements Liste<T> {
 
     /**
