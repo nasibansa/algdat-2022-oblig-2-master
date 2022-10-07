@@ -4,11 +4,7 @@ package no.oslomet.cs.algdat.Oblig2;
 ////////////////// class DobbeltLenketListe //////////////////////////////
 
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 //Oppgave 1 (Konstruktør DobbeltLenketListe + metode 'int antall' og 'boolean tom'
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -96,13 +92,19 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
+    // Oppgave 6/////////////////////////////////////////////////////////////
     @Override
     public boolean fjern(T verdi) {
+        //if (verdi == 0){
+            //    return false;
+      //  }
+            //       }
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public T fjern(int indeks) { //oppg 6
+    public T fjern(int indeks) {
+        indeksKontroll(indeks, false);
         throw new UnsupportedOperationException();
     }
 
@@ -120,9 +122,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
+    // Oppgave 8d)/////////////////////////////////////////////////////////////
     @Override
     public Iterator<T> iterator() {
-        throw new UnsupportedOperationException();
+        return new DobbeltLenketListeIterator();
     }
 
     public Iterator<T> iterator(int indeks) {
@@ -149,10 +152,21 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             return denne != null;
         }
 
-        @Override //Oppg 8
+        @Override //Oppg 8 a)
         public T next() {
-            throw new UnsupportedOperationException();
-        }
+            if (!hasNext()) {
+                throw new UnsupportedOperationException("Ingen flere verdier i listen!");
+            }
+            else if (endringer != iteratorendringer) {
+                throw new ConcurrentModificationException("Listen er endret!");
+            }
+
+            T tmp = denne.verdi;
+            denne = denne.neste;
+
+            fjernOK = true;
+
+            return tmp;        }
 
         @Override //Oppg 9
         public void remove() {
