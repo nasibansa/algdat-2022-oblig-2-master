@@ -168,12 +168,35 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
             return tmp;        }
 
-        @Override //Oppg 9
+        /* programkode 3.2.5 e) -> slutten av delkap 3.1 - grensesnittet liste
+        public void remove()
+        {
+            if (iteratorendringer != endringer) throw new
+                ConcurrentModificationException("Listen er endret!");
+            if (!fjernOK) throw
+                new IllegalStateException("Ulovlig tilstand!");
+            fjernOK = false; // remove() kan ikke kalles på nytt
+
+            ...
+            iteratorendringer++;
+        */
+
+        @Override //Oppg 9 -> kilde: programkode 3.2.5 e)
         public void remove() {
-            throw new UnsupportedOperationException();
+            if (iteratorendringer != endringer) throw
+                    new ConcurrentModificationException("");
+
+            if (!fjernOK) throw
+                    new IllegalStateException("");
+
+            fjernOK = false;
+            //burde implementere fjern her
+            iteratorendringer++;
         }
 
-    } // class DobbeltLenketListeIterator
+    }
+
+    // class DobbeltLenketListeIterator
 
     //oppg 10
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
