@@ -6,15 +6,12 @@ package no.oslomet.cs.algdat.Oblig2;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 //Oppgave 1 (Konstruktør DobbeltLenketListe + metode 'int antall' og 'boolean tom'
 public class DobbeltLenketListe<T> implements Liste<T> {
-
-    /**
-     * Node class
-     *
-     * @param <T>
-     */
     private static final class Node<T> {
         private T verdi;                   // nodens verdi
         private Node<T> forrige, neste;    // pekere
@@ -36,11 +33,22 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private int antall;            // antall noder i listen
     private int endringer;         // antall endringer i listen
 
+    //Hjelpemetode
+    /*public EnkeltLenketListe() // standardkonstruktør
+    {
+        hode = hale = null; // hode og hale til null
+        antall = 0; // ingen verdier - listen er tom
+        endringer = 0; // ingen endringer når vi starter
+    } -> Programkode 3.3.4 g) --> Delkapittel 3.3 - En lenket liste
+    */
+
     public DobbeltLenketListe() {
-        throw new UnsupportedOperationException();
+        hode = hale = null;
+        antall = 0;
+        endringer = 0;
     }
 
-    public DobbeltLenketListe(T[] a) {
+    public DobbeltLenketListe(T[] a) { //oppg 1
         throw new UnsupportedOperationException();
     }
 
@@ -50,16 +58,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int antall() {
-        throw new UnsupportedOperationException();
+        return antall;
     }
 
     @Override
     public boolean tom() {
-        throw new UnsupportedOperationException();
+        return antall == 0;
     }
 
     @Override
-    public boolean leggInn(T verdi) {
+    public boolean leggInn(T verdi) { //oppg 7 og 2
         throw new UnsupportedOperationException();
     }
 
@@ -69,7 +77,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public boolean inneholder(T verdi) {
+    public boolean inneholder(T verdi) { //oppg 4
         throw new UnsupportedOperationException();
     }
 
@@ -79,12 +87,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public int indeksTil(T verdi) {
+    public int indeksTil(T verdi) { //oppg 7
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public T oppdater(int indeks, T nyverdi) {
+    public T oppdater(int indeks, T nyverdi) { //oppg 3
         throw new UnsupportedOperationException();
     }
 
@@ -94,21 +102,21 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public T fjern(int indeks) {
+    public T fjern(int indeks) { //oppg 6
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void nullstill() {
+    public void nullstill() { //oppg 7
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public String toString() {
+    public String toString() { //oppg 7, 5
         throw new UnsupportedOperationException();
     }
 
-    public String omvendtString() {
+    public String omvendtString() { //oppg 7, 5
         throw new UnsupportedOperationException();
     }
 
@@ -126,7 +134,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         private boolean fjernOK;
         private int iteratorendringer;
 
-        private DobbeltLenketListeIterator() {
+        private DobbeltLenketListeIterator() { //FERDIGKODE IKKE ENDER
             denne = hode;     // p starter på den første i listen
             fjernOK = false;  // blir sann når next() kalles
             iteratorendringer = endringer;  // teller endringer
@@ -136,27 +144,26 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             throw new UnsupportedOperationException();
         }
 
-        @Override
+        @Override //FERDIGKODET, IKKE ENDRE
         public boolean hasNext() {
             return denne != null;
         }
 
-        @Override
+        @Override //Oppg 8
         public T next() {
             throw new UnsupportedOperationException();
         }
 
-        @Override
+        @Override //Oppg 9
         public void remove() {
             throw new UnsupportedOperationException();
         }
 
     } // class DobbeltLenketListeIterator
 
+    //oppg 10
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
         throw new UnsupportedOperationException();
     }
 
 } // class DobbeltLenketListe
-
-
