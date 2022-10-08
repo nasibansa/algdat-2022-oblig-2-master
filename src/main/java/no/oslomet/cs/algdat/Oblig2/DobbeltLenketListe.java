@@ -108,9 +108,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public void nullstill() { //oppg 7
-        throw new UnsupportedOperationException();
+    @Override //Inspirasjon fra Programkode 3.3.3 c) -> Delkapittel 3.3 - En lenket liste
+    public void nullstill() { //oppg 7, velger metode 1
+        for(Node<T> p = hode; //"start i hode"
+            p != null; p = p.neste) {
+            p.verdi = null;
+            p.forrige = p.neste = null;
+        } //nuller alt
+        hode = hale = null; //"hode og hale til null"
+        antall = 0; //"antall til null"
+        endringer++; //"endringer økes"
     }
 
     @Override
@@ -137,7 +144,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         private boolean fjernOK;
         private int iteratorendringer;
 
-        private DobbeltLenketListeIterator() { //FERDIGKODE IKKE ENDER
+        private DobbeltLenketListeIterator() { //FERDIGKODE IKKE ENDRE
             denne = hode;     // p starter på den første i listen
             fjernOK = false;  // blir sann når next() kalles
             iteratorendringer = endringer;  // teller endringer
@@ -193,7 +200,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             //burde implementere fjern her
             iteratorendringer++;
         }
-
     }
 
     // class DobbeltLenketListeIterator
