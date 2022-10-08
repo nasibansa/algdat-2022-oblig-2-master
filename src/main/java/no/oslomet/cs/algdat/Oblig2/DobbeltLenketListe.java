@@ -67,9 +67,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    @Override // inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
     public void leggInn(int indeks, T verdi) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(verdi, "vi vil ikke ha nullverdier :)"); //"sjekkes null-verdier?"
+        indeksKontroll(indeks, true); //"sjekkes indeksen?"
+
+        antall++; //antall økt
+        endringer++; //endringer økt
     }
 
     @Override
