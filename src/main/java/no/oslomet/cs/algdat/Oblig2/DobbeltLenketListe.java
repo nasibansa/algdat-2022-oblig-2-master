@@ -65,8 +65,32 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-    public Liste<T> subliste(int fra, int til) {
-        throw new UnsupportedOperationException();
+    // hjelpemetode:
+
+    private void fratilKontroll(int tabLengde, int fra, int til) {
+        if (fra < 0 || til > tabLengde) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (fra > til) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    //oppgave 3b:
+    public Liste<T> subliste(int fra, int til)
+    {
+        fratilKontroll(antall, fra, til);
+
+        Liste<T> liste = new DobbeltLenketListe<>();  // ny liste
+        Node<T> p = finnNode(fra);
+
+        for (int i = fra; i < til; i++)   // henter verdiene i (fra i til 1++) / 1++ er en positiv opperatør som teller med i
+        {
+            liste.leggInn(p.verdi);
+            p = p.neste;
+        }
+
+        return liste;
     }
 
 //Oppgave 1:
