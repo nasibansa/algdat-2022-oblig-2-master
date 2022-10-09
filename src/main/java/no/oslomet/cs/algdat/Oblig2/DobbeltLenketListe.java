@@ -6,6 +6,7 @@ package no.oslomet.cs.algdat.Oblig2;
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.Objects;
 
 
 //Oppgave 1 (Konstruktør DobbeltLenketListe + metode 'int antall' og 'boolean tom'
@@ -106,13 +107,23 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public int indeksTil(T verdi) { //oppg 7
+    public int indeksTil(T verdi) { //oppgave 7
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public T oppdater(int indeks, T nyverdi) { //oppg 3
-        throw new UnsupportedOperationException();
+    public T oppdater(int indeks, T nyVerdi)
+    {
+        indeksKontroll(indeks);
+        Objects.requireNonNull(nyVerdi, "Ugyldig verdi");
+
+        Node <T> p = finnNode(indeks);
+        T gammelVerdi = p.verdi;
+
+        p.verdi = nyVerdi;
+
+        endringer++;
+        return gammelVerdi;
     }
 
 
