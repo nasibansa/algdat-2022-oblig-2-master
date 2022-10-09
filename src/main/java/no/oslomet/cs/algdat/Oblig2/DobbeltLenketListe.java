@@ -94,14 +94,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public boolean inneholder(T verdi) { //oppg 4
+    public boolean inneholder(T verdi) {
         throw new UnsupportedOperationException();
     }
 
 //oppgave 3a)
     @Override
     public T hent(int indeks) {
-        throw new UnsupportedOperationException();
+        indeksKontroll(indeks, false);
+        return finnNode(indeks).verdi;
     }
 
     @Override
