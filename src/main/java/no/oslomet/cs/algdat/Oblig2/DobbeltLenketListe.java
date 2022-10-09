@@ -3,8 +3,10 @@ package no.oslomet.cs.algdat.Oblig2;
 
 ////////////////// class DobbeltLenketListe //////////////////////////////
 
+import java.util.Comparator;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 
-import java.util.*;
 
 //Oppgave 1 (Konstruktør DobbeltLenketListe + metode 'int antall' og 'boolean tom'
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -30,6 +32,26 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private int endringer;         // antall endringer i listen
 
     //Hjelpemetode
+    private Node<T> finnNode(int indeks) {
+        Node<T> returnNode;
+
+        if (indeks < antall / 2) {
+            returnNode = hode;
+            for (int i = 0; i < indeks; i++) returnNode = returnNode.neste;
+        } else {
+            returnNode = hale;
+            for (int i = antall - 1; i > indeks; i--) returnNode = returnNode.forrige;
+        }
+
+        return returnNode;
+    }
+
+    public DobbeltLenketListe() {
+        hode = hale = null;
+        antall = 0;
+        endringer = 0;
+    }
+
     /*public EnkeltLenketListe() // standardkonstruktør
     {
         hode = hale = null; // hode og hale til null
@@ -37,12 +59,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         endringer = 0; // ingen endringer når vi starter
     } -> Programkode 3.3.4 g) --> Delkapittel 3.3 - En lenket liste
     */
-
-    public DobbeltLenketListe() {
-        hode = hale = null;
-        antall = 0;
-        endringer = 0;
-    }
 
     public DobbeltLenketListe(T[] a) { //oppg 1
         throw new UnsupportedOperationException();
@@ -52,6 +68,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
+//Oppgave 1:
     @Override
     public int antall() {
         return antall;
@@ -81,6 +98,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
+//oppgave 3a)
     @Override
     public T hent(int indeks) {
         throw new UnsupportedOperationException();
@@ -95,6 +113,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     public T oppdater(int indeks, T nyverdi) { //oppg 3
         throw new UnsupportedOperationException();
     }
+
+
 
     // Oppgave 6/////////////////////////////////////////////////////////////
     @Override
@@ -157,6 +177,11 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         private DobbeltLenketListeIterator(int indeks) {
             throw new UnsupportedOperationException();
         }
+        public void remove()
+        {
+            if (!removeOK) throw
+                    new IllegalStateException("Ulovlig tilstand!");
+            removeOK = false;
 
         @Override //FERDIGKODET, IKKE ENDRE
         public boolean hasNext() {
