@@ -2,11 +2,11 @@ package no.oslomet.cs.algdat.Oblig2;
 
 
 ////////////////// class DobbeltLenketListe //////////////////////////////
-
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.*;
 
 
 //Oppgave 1 (Konstruktør DobbeltLenketListe + metode 'int antall' og 'boolean tom'
@@ -32,7 +32,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private int antall;            // antall noder i listen
     private int endringer;         // antall endringer i listen
 
-    //Hjelpemetode
+
+    //privat hjelpemetode for oppg 3
     private Node<T> finnNode(int indeks) {
         Node<T> returnNode;
 
@@ -43,16 +44,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             returnNode = hale;
             for (int i = antall - 1; i > indeks; i--) returnNode = returnNode.forrige;
         }
-
         return returnNode;
     }
-
-    public DobbeltLenketListe() {
-        hode = hale = null;
-        antall = 0;
-        endringer = 0;
-    }
-
+    //Hjelpemetode
     /*public EnkeltLenketListe() // standardkonstruktør
     {
         hode = hale = null; // hode og hale til null
@@ -60,6 +54,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         endringer = 0; // ingen endringer når vi starter
     } -> Programkode 3.3.4 g) --> Delkapittel 3.3 - En lenket liste
     */
+
+    public DobbeltLenketListe() {
+        hode = hale = null;
+        antall = 0;
+        endringer = 0;
+    }
 
     public DobbeltLenketListe(T[] a) { //oppg 1
         throw new UnsupportedOperationException();
@@ -93,8 +93,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return liste;
     }
 
-//Oppgave 1:
-    @Override
+    @Override //oppg 1
     public int antall() {
         return antall;
     }
@@ -105,49 +104,45 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public boolean leggInn(T verdi) { //oppg 7 og 2
-        throw new UnsupportedOperationException();
-    }
+    public boolean leggInn(T verdi) { //oppg 2
+        Objects.requireNonNull(verdi, "vi vil ikke ha nullverdier"); //stoppes null-verdier?
 
-    @Override // inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
-    public void leggInn(int indeks, T verdi) {
-        Objects.requireNonNull(verdi, "vi vil ikke ha nullverdier :)"); //"sjekkes null-verdier?"
-        indeksKontroll(indeks, true); //"sjekkes indeksen?"
+        //Blir det korrekt hvis listen fra før er tom?
+        //Blir det korrekt hvis listen fra før ikke er tom?
 
         antall++; //antall økt
         endringer++; //endringer økt
+        return true; //rett returverdi
+    }
+
+    @Override // inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
+    public void leggInn(int indeks, T verdi)
+    {
+        Objects.requireNonNull(verdi, "Ikke tillatt med null-verdier!");
+        indeksKontroll(indeks, true);
+
+        //skal være mye her i midten, sjekk kommentar på word
+
+        antall++;
+        endringer++;
     }
 
     @Override
-    public boolean inneholder(T verdi) {
-        return indeksTil(verdi) != -1;
+    public boolean inneholder(T verdi) { //oppg 4
+        throw new UnsupportedOperationException();
     }
 
-//oppgave 3a)
     @Override
     public T hent(int indeks) {
         indeksKontroll(indeks, false);
         return finnNode(indeks).verdi;
     }
 
-    //oppgave 4:
-
     @Override
-    public int indeksTil(T verdi)
-    {
-        if (verdi == null) return -1;
-
-        Node <T> p = hode;
-
-        for (int i = 0; i < antall; i++, p = p.neste)
-        {
-            if (p.verdi.equals(verdi)) return i;
-        }
-
-        return -1;
+    public int indeksTil(T verdi) { //oppg 7
+        throw new UnsupportedOperationException();
     }
 
-    //oppgave something:
     @Override
     public T oppdater(int indeks, T nyVerdi)
     {
@@ -163,9 +158,11 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return gammelVerdi;
     }
 
+    private void indeksKontroll(int indeks) {
+        throw new UnsupportedOperationException();
+    }
 
-
-    // Oppgave 7/////////////////////////////////////////////////////////////
+    // Oppgave 6/////////////////////////////////////////////////////////////
     @Override
     public boolean fjern(T verdi) {
         //if (verdi == 0){
@@ -193,10 +190,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         endringer++; //"endringer økes"
     }
 
-    @Override
-    public String toString() { //oppg 7, 5
+    @Override // Programkode 1.3.14 d) + Programkode 6.1.4 f) (Delkap 6.1 - Hashing)
+    public String toString() //Du jobbet mye her, men bare comitt først også fiks det igjen imorra
+    {
         throw new UnsupportedOperationException();
     }
+
 
     public String omvendtString() { //oppg 7, 5
         throw new UnsupportedOperationException();
@@ -226,11 +225,27 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         private DobbeltLenketListeIterator(int indeks) {
             throw new UnsupportedOperationException();
         }
+
+        @Override //Oppg 9 -> kilde: programkode 3.2.5 e)
+        public void remove() {
+            if (iteratorendringer != endringer) throw
+                    new ConcurrentModificationException("");
+
+            if (!fjernOK) throw
+                    new IllegalStateException("");
+
+            fjernOK = false;
+            //burde implementere fjern her
+            iteratorendringer++;
+        }
+
+        /* wardah hadde bare det her av oppg 9. hvilken er riktig?
         public void remove()
         {
-            if (!fjernOK) throw
+            if (!removeOK) throw
                     new IllegalStateException("Ulovlig tilstand!");
-            fjernOK = false;
+            removeOK = false;
+        */
 
         @Override //FERDIGKODET, IKKE ENDRE
         public boolean hasNext() {
@@ -266,18 +281,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             iteratorendringer++;
         */
 
-        @Override //Oppg 9 -> kilde: programkode 3.2.5 e)
-        public void remove() {
-            if (iteratorendringer != endringer) throw
-                    new ConcurrentModificationException("");
 
-            if (!fjernOK) throw
-                    new IllegalStateException("");
-
-            fjernOK = false;
-            //burde implementere fjern her
-            iteratorendringer++;
-        }
     }
 
     // class DobbeltLenketListeIterator
@@ -287,4 +291,4 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-} // class DobbeltLenketList
+} // class DobbeltLenketListe
