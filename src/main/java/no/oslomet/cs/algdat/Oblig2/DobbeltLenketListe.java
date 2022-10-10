@@ -130,11 +130,24 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return finnNode(indeks).verdi;
     }
 
+    //oppgave 4:
+
     @Override
-    public int indeksTil(T verdi) { //oppgave 7
-        throw new UnsupportedOperationException();
+    public int indeksTil(T verdi)
+    {
+        if (verdi == null) return -1;
+
+        Node <T> p = hode;
+
+        for (int i = 0; i < antall; i++, p = p.neste)
+        {
+            if (p.verdi.equals(verdi)) return i;
+        }
+
+        return -1;
     }
 
+    //oppgave something:
     @Override
     public T oppdater(int indeks, T nyVerdi)
     {
@@ -152,7 +165,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
 
 
-    // Oppgave 6/////////////////////////////////////////////////////////////
+    // Oppgave 7/////////////////////////////////////////////////////////////
     @Override
     public boolean fjern(T verdi) {
         //if (verdi == 0){
