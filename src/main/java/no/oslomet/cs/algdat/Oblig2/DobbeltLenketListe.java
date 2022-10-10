@@ -292,3 +292,5 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
 } // class DobbeltLenketListe
+
+//noenoenoe
