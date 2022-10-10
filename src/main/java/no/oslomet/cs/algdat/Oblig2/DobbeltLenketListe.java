@@ -121,7 +121,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public boolean inneholder(T verdi) {
         return indeksTil(verdi) != -1;
-        //  throw new NotImplementedException();
     }
 
 //oppgave 3a)
@@ -229,9 +228,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
         public void remove()
         {
-            if (!removeOK) throw
+            if (!fjernOK) throw
                     new IllegalStateException("Ulovlig tilstand!");
-            removeOK = false;
+            fjernOK = false;
 
         @Override //FERDIGKODET, IKKE ENDRE
         public boolean hasNext() {
@@ -288,4 +287,4 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-} // class DobbeltLenketListe
+} // class DobbeltLenketList
