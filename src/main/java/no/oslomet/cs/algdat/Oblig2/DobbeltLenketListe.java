@@ -114,10 +114,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override //oppg 2 --> Programkode 3.3.2 f) , Delkap 3.3 - lenket liste
     public boolean leggInn(T verdi) {
-        Objects.requireNonNull(verdi, "vi vil ikke ha nullverdier"); //stoppes null-verdier?
+        Objects.requireNonNull(verdi, "Vi vil ikke ha nullverdier"); //Nullverider ikke tillat pga oppgaven
 
-        // noe burde være her
-
+        Node<T>p= new Node<>(verdi, hale, null); //listen på forhånd er tom
+        hale = tom() ? (hode = p) : (hale.neste = p); //Hale peker endres på ved innleggingen.
         antall++; //antall økt
         endringer++; //endringer økt
         return true; //rett returverdi
