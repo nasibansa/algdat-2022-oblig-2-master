@@ -179,12 +179,50 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     // Oppgave 6/////////////////////////////////////////////////////////////
     @Override
     public boolean fjern(T verdi) {
-        //if (verdi == 0){
-            //    return false;
-      //  }
-            //       }
-        throw new UnsupportedOperationException();
+        if (verdi == null) {
+            return false;
+        }
+
+        Node<T> gjeldendeNode = hode;
+
+        //Fjerner første node
+        if (verdi.equals(gjeldendeNode.verdi)) {
+            if (gjeldendeNode.neste != null) {
+                hode = gjeldendeNode.neste;
+                hode.forrige = null;
+            } else {
+                hode = null;
+                hale = null;
+            }
+            antall--;
+            endringer++;
+            return true;
+        }
+
+        //Fjerner siste node
+        gjeldendeNode = hale;
+        if (verdi.equals(gjeldendeNode.verdi)) {
+            hale = gjeldendeNode.forrige;
+            hale.neste = null;
+            antall--;
+            endringer++;
+            return true;
+        }
+
+        //Fjerner node i mellom
+        gjeldendeNode = hode.neste;
+        for (; gjeldendeNode != null; gjeldendeNode = gjeldendeNode.neste) {
+            if (verdi.equals(gjeldendeNode.verdi)) {
+                gjeldendeNode.forrige.neste = gjeldendeNode.neste;
+                gjeldendeNode.neste.forrige = gjeldendeNode.forrige;
+                antall--;
+                endringer++;
+                return true;
+            }
+        }
+        return false;
     }
+
 
     @Override
     public T fjern(int indeks) {
