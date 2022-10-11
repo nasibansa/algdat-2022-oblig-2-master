@@ -103,19 +103,18 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return antall == 0;
     }
 
-    @Override
-    public boolean leggInn(T verdi) { //oppg 2
+    @Override //oppg 2 --> Programkode 3.3.2 f) , Delkap 3.3 - lenket liste
+    public boolean leggInn(T verdi) {
         Objects.requireNonNull(verdi, "vi vil ikke ha nullverdier"); //stoppes null-verdier?
 
-        //Blir det korrekt hvis listen fra før er tom?
-        //Blir det korrekt hvis listen fra før ikke er tom?
+        // noe burde være her
 
         antall++; //antall økt
         endringer++; //endringer økt
         return true; //rett returverdi
     }
 
-    @Override // inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
+    @Override // oppg 5 --> inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
     public void leggInn(int indeks, T verdi)
     {
         Objects.requireNonNull(verdi, "Ikke tillatt med null-verdier!");
@@ -139,7 +138,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     @Override
-    public int indeksTil(T verdi) { //oppg 7
+    public int indeksTil(T verdi) { //oppg 4
         throw new UnsupportedOperationException();
     }
 
@@ -189,10 +188,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         endringer++; //"endringer økes"
     }
 
-    @Override // Programkode 1.3.14 d) + Programkode 6.1.4 f) (Delkap 6.1 - Hashing)
-    public String toString() //Du jobbet mye her, men bare comitt først også fiks det igjen imorra
+    @Override // Oppg 2 --> Programkode 1.3.14 d) + Programkode 6.1.4 f) (Delkap 6.1 - Hashing)
+    public String toString()
     {
-        throw new UnsupportedOperationException();
+        StringJoiner S = new StringJoiner(", ", "[", "]");
+        for (Node<T> p = hode; p != null; p = p.neste)
+        S.add(p.verdi.toString());
+        return S.toString();
     }
 
 
