@@ -117,18 +117,24 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override // oppg 5 --> inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
     public void leggInn(int indeks, T verdi)
     {
-        Objects.requireNonNull(verdi, "Ikke tillatt med null-verdier!");
-        indeksKontroll(indeks, true);
+        Objects.requireNonNull(verdi, "ingen null-verdier tillatt"); // nullverdier stopees
+        indeksKontroll(indeks, true); //indeks sjekkes
 
-        //skal være mye her i midten, sjekk kommentar på word
+        /*
+        Blir det korrekt hvis listen fra før er tom?
+        Blir pekerne (forrige og neste) korrekte i alle noder hvis ny verdi legges først?
+        Blir pekerne (forrige og neste) korrekte i alle noder hvis ny verdi legges bakerst?
+        Blir pekerne (forrige og neste) korrekte i alle noder hvis ny verdi legges mellom to
+        verdier?
+        */
 
-        antall++;
-        endringer++;
+        antall++; // antall økt
+        endringer++; //endringer økt
     }
 
     @Override
     public boolean inneholder(T verdi) { //oppg 4
-        throw new UnsupportedOperationException();
+        return indeksTil(verdi) != -1;
     }
 
     @Override
