@@ -146,7 +146,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public T oppdater(int indeks, T nyVerdi)
     {
-        indeksKontroll(indeks);
         Objects.requireNonNull(nyVerdi, "Ugyldig verdi");
 
         Node <T> p = finnNode(indeks);
@@ -215,6 +214,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         private Node<T> denne;
         private boolean fjernOK;
         private int iteratorendringer;
+        private boolean removeOK;
 
         private DobbeltLenketListeIterator() { //FERDIGKODE IKKE ENDRE
             denne = hode;     // p starter på den første i listen
@@ -226,15 +226,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             throw new UnsupportedOperationException();
         }
 
-        @Override //Oppg 9 -> kilde: programkode 3.2.5 e)
+        //Oppg 9 -> kilde: programkode 3.2.5 e)
         public void remove() {
             if (iteratorendringer != endringer) throw
                     new ConcurrentModificationException("");
 
-            if (!fjernOK) throw
+            if (!removeOK) throw
                     new IllegalStateException("");
 
-            fjernOK = false;
+            removeOK = false;
             //burde implementere fjern her
             iteratorendringer++;
         }
@@ -252,7 +252,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             return denne != null;
         }
 
-        @Override //Oppg 8 a)
+        //Oppg 8 a)
         public T next() {
             if (!hasNext()) {
                 throw new UnsupportedOperationException("Ingen flere verdier i listen!");
