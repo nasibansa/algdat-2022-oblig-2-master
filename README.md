@@ -15,7 +15,7 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 * Sara (364533) har hatt hovedansvar for oppgave: 1 og 2
 * Danial (341501) har hatt hovedansvar for oppgave: 6 og 8
 * Vi har i fellesskap løst oppgave: 9 og 10 
-
+    
 # Oppgavebeskrivelse
 
 Oppgave 1: Sara 
