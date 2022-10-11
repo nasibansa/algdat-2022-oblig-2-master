@@ -182,9 +182,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         if (verdi == null) {
             return false;
         }
-
         Node<T> gjeldendeNode = hode;
-
         //Fjerner første node
         if (verdi.equals(gjeldendeNode.verdi)) {
             if (gjeldendeNode.neste != null) {
@@ -198,7 +196,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             endringer++;
             return true;
         }
-
         //Fjerner siste node
         gjeldendeNode = hale;
         if (verdi.equals(gjeldendeNode.verdi)) {
@@ -208,7 +205,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             endringer++;
             return true;
         }
-
         //Fjerner node i mellom
         gjeldendeNode = hode.neste;
         for (; gjeldendeNode != null; gjeldendeNode = gjeldendeNode.neste) {
@@ -223,11 +219,30 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return false;
     }
 
-
     @Override
     public T fjern(int indeks) {
-        indeksKontroll(indeks, false);
-        throw new UnsupportedOperationException();
+        indeksKontroll(indeks);
+        Node<T> temp;
+
+        if (indeks == 0) {
+            temp = hode;
+            hode = hode.neste;
+            hode.forrige = null;
+        } else if (indeks == antall - 1) {
+            temp = hale;
+            hale = hale.forrige;
+            hale.neste = null;
+        } else {
+            Node<T> p = finnNode(indeks - 1);
+            temp = p.neste;
+            p.neste = p.neste.neste;
+            p.neste.forrige = p;
+        }
+
+        antall--;
+        endringer++;
+        return temp.verdi;
+
     }
 
     @Override //Inspirasjon fra Programkode 3.3.3 c) -> Delkapittel 3.3 - En lenket liste
