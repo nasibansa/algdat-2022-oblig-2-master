@@ -63,14 +63,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     public DobbeltLenketListe(T[] a) { //oppg 1
         this();
-        Object.requireNonNull (a, "Tabellen a er null");
+        Objects.requireNonNull (a, "Tabellen a er null");
         hode = hale = new Node<>(null); // hode og hale er 0 hvis det er 0 indekser
         for (T verdi : a){
             hale = hale.neste = new Node<>(verdi, hale, null);
             antall++;
         }
 
-        if (antall = 0) hode = hale = null;
+        if (antall == 0) hode = hale = null;
 
         else (hode = hode.neste).forrige = null;
     }
