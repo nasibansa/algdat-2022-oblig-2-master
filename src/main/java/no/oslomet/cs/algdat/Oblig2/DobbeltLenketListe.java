@@ -198,8 +198,11 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
 
-    public String omvendtString() { //oppg 7, 5
-        throw new UnsupportedOperationException();
+    public String omvendtString() {
+        StringJoiner S = new StringJoiner(", ", "[", "]");
+        for (Node<T> p = hale; p != null; p = p.forrige)
+        S.add(p.verdi.toString());
+        return S.toString();
     }
 
     // Oppgave 8b)/////////////////////////////////////////////////////////////
