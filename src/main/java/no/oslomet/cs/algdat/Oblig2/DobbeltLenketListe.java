@@ -66,7 +66,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     // hjelpemetode:
-
     private void fratilKontroll(int tabLengde, int fra, int til) {
         if (fra < 0 || til > tabLengde) {
             throw new IndexOutOfBoundsException();
@@ -143,9 +142,20 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return finnNode(indeks).verdi;
     }
 
+    //oppgave 4:
     @Override
-    public int indeksTil(T verdi) { //oppg 4
-        throw new UnsupportedOperationException();
+    public int indeksTil(T verdi)
+    {
+        if (verdi == null) return -1;
+
+        Node <T> p = hode;
+
+        for (int i = 0; i < antall; i++, p = p.neste)
+        {
+            if (p.verdi.equals(verdi)) return i;
+        }
+
+        return -1;
     }
 
     @Override
@@ -162,7 +172,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return gammelVerdi;
     }
 
-    private void indeksKontroll(int indeks) {
+    private void indeksKontroll(int indeks) { //WARDAH LET ETTER DENNE
         throw new UnsupportedOperationException();
     }
 
@@ -255,14 +265,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             //burde implementere fjern her
             iteratorendringer++;
         }
-
-        /* wardah hadde bare det her av oppg 9. hvilken er riktig?
-        public void remove()
-        {
-            if (!removeOK) throw
-                    new IllegalStateException("Ulovlig tilstand!");
-            removeOK = false;
-        */
 
         @Override //FERDIGKODET, IKKE ENDRE
         public boolean hasNext() {
