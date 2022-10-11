@@ -200,14 +200,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-    // Oppgave 8d)/////////////////////////////////////////////////////////////
+    // Oppgave 8b)/////////////////////////////////////////////////////////////
     @Override
     public Iterator<T> iterator() {
         return new DobbeltLenketListeIterator();
     }
 
+    // Oppgave 8d)/////////////////////////////////////////////////////////////
     public Iterator<T> iterator(int indeks) {
-        throw new UnsupportedOperationException();
+        indeksKontroll(indeks, false);
+        return new DobbeltLenketListeIterator(indeks);
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T> {
@@ -222,8 +224,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             iteratorendringer = endringer;  // teller endringer
         }
 
+        // Oppgave 8c)/////////////////////////////////////////////////////////////
         private DobbeltLenketListeIterator(int indeks) {
-            throw new UnsupportedOperationException();
+            denne = finnNode(indeks);  // noden med oppgitt indeks;
+            fjernOK = false;  // blir sann når next() kalles
+            iteratorendringer = endringer;
+
         }
 
         //Oppg 9 -> kilde: programkode 3.2.5 e)
