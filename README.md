@@ -41,5 +41,7 @@ Deretter en else if statement for å sjekke om iteratorendringer er lik endringe
 returnerer vi DobbeltLenketListeIterator. I oppgave  8c endret vi pekere "denne" til finnNode(indeks).
 For å løse oppgave 8d la vi inn en sjekk for å se om indeksen er lovlig. Deretterreturnerer vi DobbeltLenketListeIterator.
 
-Oppgave 9: FELLES
+Oppgave 9: Løser oppgave 9 ved å lage en remove funksjon. Følger kravene gitt i oppgaven med ulovlig tilstand og forskjeller i endringer og iteratorendringer. 
+Skrevet i koden forklart med det vi har skrevet. 
+
 Oppgave 10: FELLES
