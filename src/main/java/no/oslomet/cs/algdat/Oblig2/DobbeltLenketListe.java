@@ -48,6 +48,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
         return returnNode;
     }
+
+    // hjelpemetode
+    private void indeksKontroll(int indeks) {
+        if (indeks < 0) {
+            throw new IndexOutOfBoundsException("Indeks " + indeks + " er negativ!");
+        } else if (indeks >= antall) {
+            throw new IndexOutOfBoundsException("Indeks " + indeks + " >= antall(" + antall + ") noder!");
+        }
+    }
     //Hjelpemetode
     /*public EnkeltLenketListe() // standardkonstruktør
     {
@@ -362,9 +371,18 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             return tmp;        }
     }
 
-    //oppg 10
-    public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
-        throw new UnsupportedOperationException();
-    }
+public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
 
+        for(int i = 1; i < liste.antall(); i++) {
+
+            int verdi = c.compare(liste.hent(i-1), liste.hent(i));
+
+            while(verdi > 0 && i >= 1) {
+
+                verdi = c.compare(liste.hent(i-1), liste.hent(i));
+                liste.oppdater(i, liste.oppdater(i - 1, liste.hent(i)));
+                i--;
+            }
+        }
+    }
 } // class DobbeltLenketListe
