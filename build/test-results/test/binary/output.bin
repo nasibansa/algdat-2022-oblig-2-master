@@ -6,12 +6,16 @@
 $Oppgave 1p: Feil i konstruktøren!
 =Oppgave 3l: En liste med fire verdier har ikke indeks lik 4
 7Oppgave 3n: Metoden oppdater() returnerer feil verdi!
-'Oppgave 5i: Feil i metoden leggInn()!
-'Oppgave 5j: Feil i metoden leggInn()!
+EOppgave 5g: Feil i indekssjekken! 0 <= indeks <= antall er tillatt!
 /Oppgave 6b: Indekssjekken kaster feil unntak!
 0Oppgave 6d: Indekssjekken kaster feil unntak!!
-0Oppgave 6f: Indekssjekken kaster feil unntak!!
+$Oppgave 6e: Indeks -1 finnes ikke!
+7Oppgave 6ga: Feil returverdi i metoden fjern(indeks)!
+;Oppgave 6gb: Feil i antall-oppdateringen i fjern(indeks)!
+?             Reduseres ikke antall? Reduserers den to ganger!
 
 *Oppgave 8b: Det kastes feil type unntak!
 
 *Oppgave 8e: Det kastes feil type unntak!
+
+*Oppgave 8y: Det kastes feil type unntak!

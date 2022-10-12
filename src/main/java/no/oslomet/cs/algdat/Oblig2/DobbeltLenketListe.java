@@ -13,7 +13,8 @@ import java.util.*;
 public class DobbeltLenketListe<T> implements Liste<T> {
     private static final class Node<T> {
         private T verdi;                   // nodens verdi
-        private Node<T> forrige, neste;    // pekere
+        private Node<T> forrige;
+        private Node neste;    // pekere
 
         private Node(T verdi, Node<T> forrige, Node<T> neste) {
             this.verdi = verdi;
@@ -27,8 +28,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     // instansvariabler
-    private Node<T> hode;          // peker til den første i listen
-    private Node<T> hale;          // peker til den siste i listen
+    private Node hode;          // peker til den første i listen
+    private Node hale;          // peker til den siste i listen
     private int antall;            // antall noder i listen
     private int endringer;         // antall endringer i listen
 
@@ -123,19 +124,22 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return true; //rett returverdi
     }
 
-    @Override // oppg 5 --> inspo fra Programkode 3.2.3 b) og 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
+    @Override // oppg 5 --> inspo fra Programkode 3.3.2 g)-> Delkap 3.2 - En tabellbasert liste
     public void leggInn(int indeks, T verdi)
     {
-        Objects.requireNonNull(verdi, "ingen null-verdier tillatt"); // nullverdier stopees
+        Objects.requireNonNull(verdi, "ingen null-verdier tillatt"); // nullverdier stoppes
         indeksKontroll(indeks, true); //indeks sjekkes
 
-        /*
-        Blir det korrekt hvis listen fra før er tom?
-        Blir pekerne (forrige og neste) korrekte i alle noder hvis ny verdi legges først?
-        Blir pekerne (forrige og neste) korrekte i alle noder hvis ny verdi legges bakerst?
-        Blir pekerne (forrige og neste) korrekte i alle noder hvis ny verdi legges mellom to
-        verdier?
-        */
+        if (indeks == 0) {
+            hode = hode.forrige = new Node<T>(verdi, null, null); //får en verdi foran alle
+        }
+        else if (indeks == antall) {
+            hale = hale.neste = new Node<T>(verdi, hale, null); // får en verdi helt bakerst (hode foran, hale bak)
+        }
+        else {
+            Node<T> p = finnNode(indeks); //trenger finnNode for å returnere eksakt verdi
+            p.forrige = p.forrige.neste = new Node <>(verdi, p.forrige, p);
+        }
 
         antall++; // antall økt
         endringer++; //endringer økt
@@ -180,10 +184,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         endringer++;
         return gammelVerdi;
-    }
-
-    private void indeksKontroll(int indeks) { //WARDAH LET ETTER DENNE
-        throw new UnsupportedOperationException();
     }
 
     // Oppgave 6/////////////////////////////////////////////////////////////
@@ -231,7 +231,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T fjern(int indeks) {
-        indeksKontroll(indeks);
+        //indeksKontroll(indeks);
         Node<T> temp;
 
         if (indeks == 0) {
