@@ -30,16 +30,13 @@ Bruker stringbuilder som gitt i oppgaven, endra fra stringjoiner i første commi
 slik at verdiene leses fra hale til hode og forrige verdi leses. Dermed kan vi se om forrige pekerne er satt riktig. I metoden legginn(T verdi) brukte vi mye av
 kildekoden gitt i kompendiet tatt fra delkapittel 3.3, programkode 3.3.2 f. Forklart i java filen hva de ulike funksjonene gjør. 
 
-Oppgave 3: Lagde en privat hjelpemetode finnNode. Denne ble inspirert fra kompendiet, 3.3.3, men har implementert en if-sjekk for å forsikre at letingen skal gå mot høyre om antallet er mindre enn 2 og ellers mot venstre. Har så lagd en ny public metode, T hent, denne har tatt utgangspunkt i finnNode og forteller oss indeks verdien til noden. Den utfører også en indekskontroll. 
-Har også lagd en metode som oppdaterer indeks med ny verdi, og godtar ikke null verdier. 
-I oppgave 3b har jeg lagd metoden subliste. Denne metoden skal i hovedsak returne en ny liste som baserer seg på dobbeltlenketliste. Jeg ha begrenset denne listen med intervallet fra, til. Gjort dette ved hjelp av en for løkke. Har også lagd en hjelpemetode private void fratilKontrolll (denne er også inspirert fra kompendiet delkapittel 1.2. 
-
+Oppgave 3: Wardah 
 
 Oppgave 4: Wardah
 
 Oppgave 5: Her har vi en dobbeltlenketliste (ikke enkel), og da går vi "opp et hakk". Derfor tegnet jeg først for meg selv, og fikk en bedre forståelse av hva jeg skulle gjøre. Jeg har skrevet kommentarer på hva jeg har gjort i koden, men enkelt forklart så fulgte jeg bare sjekklistene og baserte meg på de der. 
 
-Oppgave 6: Danial
+Oppgave 6: For å løse denne oppgaven la vi til en indekskontroll i T fjern(int indeks) metoden. Deretter bruker vi en if, else if og else statement som fjerner den første noden, så den siste noden og tilslutt den mellomste. I den andre metoden starter vi med å sjekke om "verdi" er lik null. På sammen måte som i den andre metoden starter vi med å fjerne den første noden. Deretter den siste noden og til slutt noden i mellom.
 
 Oppgave 7: I oppgave 7 valgte jeg å bruke metode 1, selv om jeg har hørt metode 2 er raskere. Jeg syntes den første metoden var enklere å utføre, og startet med å jobbe i hode også gå videre mot hale. Jeg brukte pekere (forkortet til bare "p"), 
 
