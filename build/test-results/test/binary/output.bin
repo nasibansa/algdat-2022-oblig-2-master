@@ -3,21 +3,12 @@
 $Oppgave 1n: Feil i konstruktøren!
 $Oppgave 1o: Feil i konstruktøren!
 $Oppgave 1p: Feil i konstruktøren!
+2Oppgave 2m: Du har [null], men det skal være []
+HOppgave 2m: Du har [null, 1, null, 2, null], men det skal være [1, 2]
 =Oppgave 3l: En liste med fire verdier har ikke indeks lik 4
 7Oppgave 3n: Metoden oppdater() returnerer feil verdi!
 EOppgave 5g: Feil i indekssjekken! 0 <= indeks <= antall er tillatt!
-/Oppgave 6b: Indekssjekken kaster feil unntak!
-0Oppgave 6d: Indekssjekken kaster feil unntak!!
-$Oppgave 6e: Indeks -1 finnes ikke!
-7Oppgave 6ga: Feil returverdi i metoden fjern(indeks)!
-;Oppgave 6gb: Feil i antall-oppdateringen i fjern(indeks)!
-?             Reduseres ikke antall? Reduserers den to ganger!
-
-*Oppgave 8b: Det kastes feil type unntak!
-
-*Oppgave 8e: Det kastes feil type unntak!
-
-*Oppgave 8y: Det kastes feil type unntak!
+@Oppgave 6u: Her kastes det et unntak, men det skal ikke skje!!
 Oppgave 9b: Feil i remove()!
 Oppgave 9c: Feil i remove()!
 2Oppgave 9d: Feil når remove() har slettet alle!

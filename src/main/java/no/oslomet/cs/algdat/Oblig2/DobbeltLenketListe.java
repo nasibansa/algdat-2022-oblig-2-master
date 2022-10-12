@@ -241,7 +241,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T fjern(int indeks) {
-        //indeksKontroll(indeks);
+        indeksKontroll(indeks);
         Node<T> temp;
 
         if (indeks == 0) {
