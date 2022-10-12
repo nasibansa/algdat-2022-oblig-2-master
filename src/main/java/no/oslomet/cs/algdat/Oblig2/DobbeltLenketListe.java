@@ -252,7 +252,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         antall--;
         endringer++;
         return temp.verdi;
-
     }
 
     @Override //Inspirasjon fra Programkode 3.3.3 c) -> Delkapittel 3.3 - En lenket liste
@@ -275,7 +274,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         S.add(p.verdi.toString());
         return S.toString();
     }
-
 
     public String omvendtString() {
         StringJoiner S = new StringJoiner(", ", "[", "]");
@@ -319,13 +317,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         //Oppg 9 -> kilde: programkode 3.2.5 e)
         public void remove() {
             if (iteratorendringer != endringer) throw
-                    new ConcurrentModificationException("");
+                    new ConcurrentModificationException("endringer og iteratorendringer er forskjellige");
 
-            if (!removeOK) throw
-                    new IllegalStateException("");
+            if (!fjernOK) throw
+                    new IllegalStateException("Ulovlig tilstand");
 
-            removeOK = false;
-            //burde implementere fjern her
+            fjernOK = false;
+
+            antall--;
+            endringer++;
             iteratorendringer++;
         }
 
@@ -349,24 +349,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             fjernOK = true;
 
             return tmp;        }
-
-        /* programkode 3.2.5 e) -> slutten av delkap 3.1 - grensesnittet liste
-        public void remove()
-        {
-            if (iteratorendringer != endringer) throw new
-                ConcurrentModificationException("Listen er endret!");
-            if (!fjernOK) throw
-                new IllegalStateException("Ulovlig tilstand!");
-            fjernOK = false; // remove() kan ikke kalles på nytt
-
-            ...
-            iteratorendringer++;
-        */
-
-
     }
-
-    // class DobbeltLenketListeIterator
 
     //oppg 10
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
@@ -374,5 +357,3 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
 } // class DobbeltLenketListe
-
-//noenoenoe
