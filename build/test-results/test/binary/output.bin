@@ -9,6 +9,3 @@
 7Oppgave 3n: Metoden oppdater() returnerer feil verdi!
 EOppgave 5g: Feil i indekssjekken! 0 <= indeks <= antall er tillatt!
 @Oppgave 6u: Her kastes det et unntak, men det skal ikke skje!!
-Oppgave 9b: Feil i remove()!
-Oppgave 9c: Feil i remove()!
-2Oppgave 9d: Feil når remove() har slettet alle!
