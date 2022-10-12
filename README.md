@@ -50,4 +50,4 @@ For å løse oppgave 8d la vi inn en sjekk for å se om indeksen er lovlig. Dere
 Oppgave 9: Løser oppgave 9 ved å lage en remove funksjon. Følger kravene gitt i oppgaven med ulovlig tilstand og forskjeller i endringer og iteratorendringer. 
 Skrevet i koden forklart med det vi har skrevet. Jeg lagde basically bare en if-sjekk /statement, og passet på at den fylte alle kravene fra oppgaven. 
 
-Oppgave 10: FELLES
+Oppgave 10: Lagde en public metode som sorterer liste ved hjelp av comparator c. Jeg implementerte en for loop som kjører gjennom listen, fra i til i ++. U Lager så en while løkke, som vil kjøre så lenge det er en inversjon, og stopper før indeksen får out. ofbounds.  Denne metoden var vanskelig å utforme fordi det var mange begrensinger i oppgave teksten. Koden er basert på programkode 5.3.6 c). Med endringer som er mer spesifikke for denne oppgaven
