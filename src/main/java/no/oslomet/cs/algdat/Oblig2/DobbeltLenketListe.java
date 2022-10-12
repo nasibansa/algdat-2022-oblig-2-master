@@ -1,7 +1,8 @@
 package no.oslomet.cs.algdat.Oblig2;
 
 
-////////////////// class DobbeltLenketListe //////////////////////////////
+////////////////// class
+////////////////////////
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -266,20 +267,30 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         endringer++; //"endringer økes"
     }
 
-    @Override // Oppg 2 --> Programkode 1.3.14 d) + Programkode 6.1.4 f) (Delkap 6.1 - Hashing)
-    public String toString()
-    {
-        StringJoiner S = new StringJoiner(", ", "[", "]");
-        for (Node<T> p = hode; p != null; p = p.neste)
-        S.add(p.verdi.toString());
-        return S.toString();
+    @Override // Oppg 2 -->
+
+    public String toString() {
+        StringBuilder s = new StringBuilder(); s.append("[");
+        if (!tom()){
+            s.append(hode.verdi);
+            for(Node<T> p = hode.neste; p !=null; p = p.neste) {
+                s.append(",").append(" ").append(p.verdi);
+            }
+        }
+        s.append("]");
+        return s.toString();
     }
 
     public String omvendtString() {
-        StringJoiner S = new StringJoiner(", ", "[", "]");
-        for (Node<T> p = hale; p != null; p = p.forrige)
-        S.add(p.verdi.toString());
-        return S.toString();
+        StringBuilder s = new StringBuilder();s.append("[");
+        if (!tom()){
+            s.append(hale.verdi);
+            for (Node<T> p = hale.forrige; p != null; p = p.forrige){
+                s.append(",").append(" ").append(p.verdi);
+            }
+        }
+        s.append("]");
+        return s.toString();
     }
 
     // Oppgave 8b)/////////////////////////////////////////////////////////////

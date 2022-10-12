@@ -18,8 +18,18 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
     
 # Oppgavebeskrivelse
 
-Oppgave 1: Sara
-Oppgave 2: Sarah
+Oppgave 1: I denne oppgaven lagde vi metodene int antall() og boolean tom(). Disse returnerer da både antall, 
+og antall lik 0 om det er en tom liste. Etter det satte vi inn konstruktøren. Det ble en del feilmeldingen pga skrivefeil som var lett å rette opp i. 
+Konstruktøren kunne ikke testes ferdig vi ikke den ikke til å godkjenne alle tester før oppgave 2 var fullført. Ellers testa og var godkjent. 
+La inn riktig metode for som er gitt i oppgaveteksen for null-verdier. Setter inn noder med første som hode og andre som hale.
+Slik er rekkefølgen riktig. Passer på at hode.forrige og hale.neste er 0, siden er de første og siste nodene. 
+
+Oppgave 2: Lager metodene tostring og omvendt string. Brukte første metodene i kompendiet men fikk opp flere feilmeldinger og ikke fikk godkjent, 
+blant annet at den ikke retunerte noen nullverdi. Dermed brukte vi append funksjonen, koda og testa på andre måter og fikk metoden godkjent. 
+Bruker stringbuilder som gitt i oppgaven, endra fra stringjoiner i første commit. I omvent stringen setter vi inn nodene slik at de leses bakveis, 
+slik at verdiene leses fra hale til hode og forrige verdi leses. Dermed kan vi se om forrige pekerne er satt riktig. I metoden legginn(T verdi) brukte vi mye av
+kildekoden gitt i kompendiet tatt fra delkapittel 3.3, programkode 3.3.2 f. Forklart i java filen hva de ulike funksjonene gjør. 
+
 Oppgave 3: Wardah 
 Oppgave 4: Wardah
 Oppgave 5: Nasiba. Dobbeltlenketliste, ikke enkel. 
