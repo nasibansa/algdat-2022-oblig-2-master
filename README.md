@@ -30,7 +30,9 @@ Bruker stringbuilder som gitt i oppgaven, endra fra stringjoiner i første commi
 slik at verdiene leses fra hale til hode og forrige verdi leses. Dermed kan vi se om forrige pekerne er satt riktig. I metoden legginn(T verdi) brukte vi mye av
 kildekoden gitt i kompendiet tatt fra delkapittel 3.3, programkode 3.3.2 f. Forklart i java filen hva de ulike funksjonene gjør. 
 
-Oppgave 3: Wardah 
+Oppgave 3: Lagde en privat hjelpemetode finnNode. Denne ble inspirert fra kompendiet, 3.3.3, men har implementert en if-sjekk for å forsikre at letingen skal gå mot høyre om antallet er mindre enn 2 og ellers mot venstre. Har så lagd en ny public metode, T hent, denne har tatt utgangspunkt i finnNode og forteller oss indeks verdien til noden. Den utfører også en indekskontroll. 
+Har også lagd en metode som oppdaterer indeks med ny verdi, og godtar ikke null verdier. 
+I oppgave 3b har jeg lagd metoden subliste. Denne metoden skal i hovedsak returne en ny liste som baserer seg på dobbeltlenketliste. Jeg ha begrenset denne listen med intervallet fra, til. Gjort dette ved hjelp av en for løkke. Har også lagd en hjelpemetode private void fratilKontrolll (denne er også inspirert fra kompendiet delkapittel 1.2. 
 
 Oppgave 4: Wardah
 
