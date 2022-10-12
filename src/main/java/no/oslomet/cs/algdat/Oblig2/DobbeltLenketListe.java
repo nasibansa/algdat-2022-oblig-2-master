@@ -357,7 +357,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         //Oppg 8 a)
         public T next() {
             if (!hasNext()) {
-                throw new UnsupportedOperationException("Ingen flere verdier i listen!");
+                throw new NoSuchElementException("Ingen flere verdier i listen!");
             }
             else if (endringer != iteratorendringer) {
                 throw new ConcurrentModificationException("Listen er endret!");

@@ -35,6 +35,11 @@ Oppgave 4: Wardah
 Oppgave 5: Nasiba. Dobbeltlenketliste, ikke enkel. 
 Oppgave 6: Danial
 Oppgave 7: Nasiba
-Oppgave 8: Danial
+
+Oppgave 8: For å løse oppgave 8a har vi brukt if state statement for å sjekke at !hasNext har noen verdier i tabellen.
+Deretter en else if statement for å sjekke om iteratorendringer er lik endringer. I oppgave 8b
+returnerer vi DobbeltLenketListeIterator. I oppgave  8c endret vi pekere "denne" til finnNode(indeks).
+For å løse oppgave 8d la vi inn en sjekk for å se om indeksen er lovlig. Deretterreturnerer vi DobbeltLenketListeIterator.
+
 Oppgave 9: FELLES
 Oppgave 10: FELLES
