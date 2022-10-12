@@ -18,11 +18,11 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
     
 # Oppgavebeskrivelse
 
-Oppgave 1: Sara 
+Oppgave 1: Sara
 Oppgave 2: Sarah
 Oppgave 3: Wardah 
 Oppgave 4: Wardah
-Oppgave 5: Nasiba 
+Oppgave 5: Nasiba. Dobbeltlenketliste, ikke enkel. 
 Oppgave 6: Danial
 Oppgave 7: Nasiba
 Oppgave 8: Danial
