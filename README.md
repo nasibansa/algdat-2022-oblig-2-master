@@ -34,7 +34,7 @@ Oppgave 3: Lagde en privat hjelpemetode finnNode. Denne ble inspirert fra kompen
 Har også lagd en metode som oppdaterer indeks med ny verdi, og godtar ikke null verdier. 
 I oppgave 3b har jeg lagd metoden subliste. Denne metoden skal i hovedsak returne en ny liste som baserer seg på dobbeltlenketliste. Jeg ha begrenset denne listen med intervallet fra, til. Gjort dette ved hjelp av en for løkke. Har også lagd en hjelpemetode private void fratilKontrolll (denne er også inspirert fra kompendiet delkapittel 1.2. 
 
-Oppgave 4: Wardah
+Oppgave 4: Public metoden void leggIn kjører en if-sjekk som sjekker indeksen/posisjonen til verdi avhengig av om den finnes i listen. Den vil returnere -1 om verdien er lik null. Lagde så metoden boolean inneholder, der baserer seg på den forrige metoden og forteller oss om det er sant eller usant om verdien er med i listen eller ikke. 
 
 Oppgave 5: Her har vi en dobbeltlenketliste (ikke enkel), og da går vi "opp et hakk". Derfor tegnet jeg først for meg selv, og fikk en bedre forståelse av hva jeg skulle gjøre. Jeg har skrevet kommentarer på hva jeg har gjort i koden, men enkelt forklart så fulgte jeg bare sjekklistene og baserte meg på de der. 
 
