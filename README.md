@@ -31,10 +31,14 @@ slik at verdiene leses fra hale til hode og forrige verdi leses. Dermed kan vi s
 kildekoden gitt i kompendiet tatt fra delkapittel 3.3, programkode 3.3.2 f. Forklart i java filen hva de ulike funksjonene gjør. 
 
 Oppgave 3: Wardah 
+
 Oppgave 4: Wardah
-Oppgave 5: Nasiba. Dobbeltlenketliste, ikke enkel. 
+
+Oppgave 5: Her har vi en dobbeltlenketliste (ikke enkel), og da går vi "opp et hakk". Derfor tegnet jeg først for meg selv, og fikk en bedre forståelse av hva jeg skulle gjøre. Jeg har skrevet kommentarer på hva jeg har gjort i koden, men enkelt forklart så fulgte jeg bare sjekklistene og baserte meg på de der. 
+
 Oppgave 6: Danial
-Oppgave 7: Nasiba
+
+Oppgave 7: I oppgave 7 valgte jeg å bruke metode 1, selv om jeg har hørt metode 2 er raskere. Jeg syntes den første metoden var enklere å utføre, og startet med å jobbe i hode også gå videre mot hale. Jeg brukte pekere (forkortet til bare "p"), 
 
 Oppgave 8: For å løse oppgave 8a har vi brukt if state statement for å sjekke at !hasNext har noen verdier i tabellen.
 Deretter en else if statement for å sjekke om iteratorendringer er lik endringer. I oppgave 8b
@@ -42,6 +46,6 @@ returnerer vi DobbeltLenketListeIterator. I oppgave  8c endret vi pekere "denne"
 For å løse oppgave 8d la vi inn en sjekk for å se om indeksen er lovlig. Deretterreturnerer vi DobbeltLenketListeIterator.
 
 Oppgave 9: Løser oppgave 9 ved å lage en remove funksjon. Følger kravene gitt i oppgaven med ulovlig tilstand og forskjeller i endringer og iteratorendringer. 
-Skrevet i koden forklart med det vi har skrevet. 
+Skrevet i koden forklart med det vi har skrevet. Jeg lagde basically bare en if-sjekk /statement, og passet på at den fylte alle kravene fra oppgaven. 
 
 Oppgave 10: FELLES
