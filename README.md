@@ -38,9 +38,9 @@ Oppgave 4: Wardah
 
 Oppgave 5: Her har vi en dobbeltlenketliste (ikke enkel), og da går vi "opp et hakk". Derfor tegnet jeg først for meg selv, og fikk en bedre forståelse av hva jeg skulle gjøre. Jeg har skrevet kommentarer på hva jeg har gjort i koden, men enkelt forklart så fulgte jeg bare sjekklistene og baserte meg på de der. 
 
-Oppgave 6: For å løse denne oppgaven la vi til en indekskontroll i T fjern(int indeks) metoden. Deretter bruker vi en if, else if og else statement som fjerner den første noden, så den siste noden og tilslutt den mellomste. I den andre metoden starter vi med å sjekke om "verdi" er lik null. På sammen måte som i den andre metoden starter vi med å fjerne den første noden. Deretter den siste noden og til slutt noden i mellom.
+Oppgave 6: For å løse denne oppgaven la vi til en indekskontroll i T fjern(int indeks) metoden. Deretter bruker vi en if, else if og else statement som fjerner den første noden, så den siste noden og tilslutt den mellomste. I den andre metoden starter vi med å sjekke om "verdi" er lik null. På sammen måte som i den andre metoden starter vi med å fjerne den første noden. Deretter den siste noden og til slutt noden i mellom. Får opp en feil i test 6u, skjønte ikke hva som var feil. HÅper det går bra :)
 
-Oppgave 7: I oppgave 7 valgte jeg å bruke metode 1, selv om jeg har hørt metode 2 er raskere. Jeg syntes den første metoden var enklere å utføre, og startet med å jobbe i hode også gå videre mot hale. Jeg brukte pekere (forkortet til bare "p"), 
+Oppgave 7: I oppgave 7 valgte jeg å bruke metode 1, selv om jeg har hørt metode 2 er raskere. Jeg syntes den første metoden var enklere å utføre, og startet med å jobbe i hode også gå videre mot hale. Jeg nullet alle pekere (forkortet til bare "p") og nodeverdier, setter egentlig alt til null, også addet inn "antall" og "endringer" til slutt
 
 Oppgave 8: For å løse oppgave 8a har vi brukt if state statement for å sjekke at !hasNext har noen verdier i tabellen.
 Deretter en else if statement for å sjekke om iteratorendringer er lik endringer. I oppgave 8b
