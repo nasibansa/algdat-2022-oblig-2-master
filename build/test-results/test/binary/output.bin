@@ -5,7 +5,4 @@
 $Oppgave 1p: Feil i konstruktøren!
 2Oppgave 2m: Du har [null], men det skal være []
 HOppgave 2m: Du har [null, 1, null, 2, null], men det skal være [1, 2]
-=Oppgave 3l: En liste med fire verdier har ikke indeks lik 4
-7Oppgave 3n: Metoden oppdater() returnerer feil verdi!
-EOppgave 5g: Feil i indekssjekken! 0 <= indeks <= antall er tillatt!
 @Oppgave 6u: Her kastes det et unntak, men det skal ikke skje!!

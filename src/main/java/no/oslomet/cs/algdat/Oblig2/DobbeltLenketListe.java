@@ -140,11 +140,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         Objects.requireNonNull(verdi, "ingen null-verdier tillatt"); // nullverdier stoppes
         indeksKontroll(indeks, true); //indeks sjekkes
 
-        if (indeks == 0) {
-            hode = hode.forrige = new Node<T>(verdi, null, null); //får en verdi foran alle
+        if (tom()){ //la til en ny if tom for å sjekke om listen er tom
+            hode = hale = new Node<T>(verdi, null, null);
+        }
+        else if (indeks == 0) {
+            hode = new Node<T>(verdi, null, hode); //får en verdi foran alle
+            hode.neste.forrige = hode;
         }
         else if (indeks == antall) {
-            hale = hale.neste = new Node<T>(verdi, hale, null); // får en verdi helt bakerst (hode foran, hale bak)
+            hale = new Node<T>(verdi, hale, null); // får en verdi helt bakerst (hode foran, hale bak)
+            hale.forrige.neste = hale;
         }
         else {
             Node<T> p = finnNode(indeks); //trenger finnNode for å returnere eksakt verdi
