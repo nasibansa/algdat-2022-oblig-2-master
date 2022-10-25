@@ -207,9 +207,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     // Oppgave 6/////////////////////////////////////////////////////////////
     @Override
     public boolean fjern(T verdi) {
-        if (verdi == null) {
-            return false;
-        }
+        if (verdi == null) return false;
+
         Node<T> gjeldendeNode = hode;
         //Fjerner første node
         if (verdi.equals(gjeldendeNode.verdi)) {
@@ -217,8 +216,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                 hode = gjeldendeNode.neste;
                 hode.forrige = null;
             } else {
-                hode = null;
-                hale = null;
+                hode = hale = null;
             }
             antall--;
             endringer++;
@@ -233,7 +231,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             endringer++;
             return true;
         }
-        //Fjerner node i mellom
+        //Fjerner mellom
         gjeldendeNode = hode.neste;
         for (; gjeldendeNode != null; gjeldendeNode = gjeldendeNode.neste) {
             if (verdi.equals(gjeldendeNode.verdi)) {
@@ -246,30 +244,42 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
         return false;
     }
-
     @Override
     public T fjern(int indeks) {
-        indeksKontroll(indeks);
-        Node<T> temp;
+        indeksKontroll(indeks, false);
 
+        Node<T> gjeldendeNode = hode;
+        T verdi;
+
+        //Fjerner første
         if (indeks == 0) {
-            temp = hode;
-            hode = hode.neste;
-            hode.forrige = null;
-        } else if (indeks == antall - 1) {
-            temp = hale;
-            hale = hale.forrige;
-            hale.neste = null;
-        } else {
-            Node<T> p = finnNode(indeks - 1);
-            temp = p.neste;
-            p.neste = p.neste.neste;
-            p.neste.forrige = p;
+            verdi = gjeldendeNode.verdi;
+            if (gjeldendeNode.neste != null) {
+                hode = gjeldendeNode.neste;
+                hode.forrige = null;
+            } else {
+                hode = hale = null;
+            }
         }
-
+        //Fjerner siste
+        else if (indeks == antall - 1) {
+            gjeldendeNode = hale;
+            verdi = (T) hale.verdi;
+            hale = gjeldendeNode.forrige;
+            hale.neste = null;
+        }
+        //Fjerner mellom
+        else {
+            for (int i = 0; i < indeks; i++) {
+                gjeldendeNode = gjeldendeNode.neste;
+            }
+            verdi = gjeldendeNode.verdi;
+            gjeldendeNode.forrige.neste = gjeldendeNode.neste;
+            gjeldendeNode.neste.forrige = gjeldendeNode.forrige;
+        }
         antall--;
         endringer++;
-        return temp.verdi;
+        return verdi;
     }
 
     @Override //Inspirasjon fra Programkode 3.3.3 c) -> Delkapittel 3.3 - En lenket liste
