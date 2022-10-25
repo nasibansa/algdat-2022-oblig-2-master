@@ -1,8 +1,1 @@
-$Oppgave 1l: Feil i konstruktøren!
-$Oppgave 1m: Feil i konstruktøren!
-$Oppgave 1n: Feil i konstruktøren!
-$Oppgave 1o: Feil i konstruktøren!
-$Oppgave 1p: Feil i konstruktøren!
-2Oppgave 2m: Du har [null], men det skal være []
-HOppgave 2m: Du har [null, 1, null, 2, null], men det skal være [1, 2]
 @Oppgave 6u: Her kastes det et unntak, men det skal ikke skje!!

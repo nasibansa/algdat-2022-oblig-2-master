@@ -14,8 +14,7 @@ import java.util.*;
 public class DobbeltLenketListe<T> implements Liste<T> {
     private static final class Node<T> {
         private T verdi;                   // nodens verdi
-        private Node<T> forrige;
-        private Node neste;    // pekere
+        private Node<T> forrige, neste;    // pekere
 
         private Node(T verdi, Node<T> forrige, Node<T> neste) {
             this.verdi = verdi;
@@ -76,13 +75,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         this();
         Objects.requireNonNull (a, "Tabellen a er null");
         hode = hale = new Node<>(null); // hode og hale er 0 hvis det er 0 indekser
-        for (T verdi : a){
-            hale = hale.neste = new Node<>(verdi, hale, null);
-            antall++;
+        for (T verdi : a)
+        {
+            if(verdi != null) { //denne stygge if-setningen ødela alt
+                hale = hale.neste = new Node<>(verdi, hale, null);
+                antall++;
+            }
         }
 
         if (antall == 0) hode = hale = null;
-
         else (hode = hode.neste).forrige = null;
     }
 
